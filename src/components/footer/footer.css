@@ -1,0 +1,105 @@
+@media screen and (max-width: 1150px) {
+  .footer-outest {
+    padding: 60px 40px !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer-outest {
+    padding: 60px 20px !important;
+  }
+  .main-footer {
+    width: 45% !important;
+  }
+  .first {
+    width: 40% !important;
+  }
+  .last {
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .footer-outest {
+    padding: 30px 20px !important;
+    height: 270px !important;
+  }
+  .main-footer {
+    width: 45% !important;
+  }
+  .first {
+    width: 30% !important;
+  }
+  .last {
+    width: 70% !important;
+  }
+  .right-footer {
+    width: 52% !important;
+  }
+}
+@media screen and (max-width: 680px) {
+  .icons {
+    margin-bottom: 20px !important;
+  }
+  .footer-logo {
+    margin-bottom: 10px !important;
+  }
+  .footer-outest {
+    flex-direction: column;
+    height: 400px !important;
+    justify-content: space-between !important;
+    padding: 30px 20px 0px 20px !important;
+  }
+  .main-footer {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .first {
+    width: 40% !important;
+  }
+  .last {
+    width: 60% !important;
+  }
+  .right-footer {
+    justify-content: space-around !important;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .img-footer-icon {
+    height: 22px !important;
+  }
+  .img-footericon {
+    height: 16px !important;
+  }
+  .footer-outest {
+    height: 500px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .last {
+    height: auto !important;
+  }
+  .icons {
+    margin-bottom: 20px !important;
+  }
+  .right-footer {
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .footer-outest {
+    height: 580px !important;
+  }
+  .first {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .last {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 370px) {
+  .footer-outest {
+    /* height: 760px !important; */
+  }
+}
