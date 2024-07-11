@@ -45,7 +45,7 @@ const Navbar = () => {
         style={{
           height: "80px",
           position: "fixed",
-          backgroundColor: "red",
+          backgroundColor: color.secondary,
           // transition: "background-color 0.3s ease",
           zIndex: "10",
           width: "100%",
