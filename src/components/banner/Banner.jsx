@@ -147,7 +147,8 @@ const Banner = () => {
               width: "240px",
               height: "100px",
               alignItems: "center",
-              backgroundColor: "red",
+              // backgroundColor: "red",
+              border:"1px solid black"
               padding:"10px"
             }}
           >

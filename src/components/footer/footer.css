@@ -44,7 +44,7 @@
   }
   .footer-outest {
     flex-direction: column;
-    height: 400px !important;
+    height: 350px !important;
     justify-content: space-between !important;
     padding: 30px 20px 0px 20px !important;
   }
