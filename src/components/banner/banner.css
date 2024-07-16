@@ -1,7 +1,20 @@
 .ant-modal-close-x {
   display: none;
 }
+.single-modal-content {
+  cursor: pointer !important;
+  border-radius: 10px !important;
+}
+
+.single-modal-content:hover {
+  background-color: rgba(173, 232, 244) !important;
+  transition: 0.3s all ease-in-out;
+  box-shadow: none !important;
+}
 @media screen and (max-width: 1000px) {
+  .box {
+    width: 800px !important;
+  }
   .banner-outer-fin {
     height: 800px !important;
   }
@@ -18,7 +31,22 @@
     left: 30px !important;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  .box {
+    width: 700px !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  .box {
+    width: 600px !important;
+  }
+  .single-modal-content {
+    width: 150px !important;
+    height: 130px !important;
+    flex-direction: column !important;
+    padding: 20px 10px !important;
+    text-align: center !important;
+  }
   .banner-outer-fin {
     height: 700px !important;
   }
@@ -26,6 +54,19 @@
     width: 400px !important;
     top: 250px !important;
     left: 20px !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .box {
+    width: 500px !important;
+    height: auto !important;
+  }
+  .single-modal-content {
+    width: 140px !important;
+    height: 120px !important;
+    flex-direction: column !important;
+    padding: 20px 10px !important;
+    text-align: center !important;
   }
 }
 
@@ -42,19 +83,35 @@
 
 @media screen and (max-width: 500px) {
   .banner-outer-fin {
-    height:500px !important;
+    height: 500px !important;
   }
   .banner-text-div-b {
     width: 350px !important;
     top: 180px !important;
     left: 20px !important;
   }
+  .box {
+    width: 350px !important;
+    height: 600px !important;
+  }
+  .single-modal-content {
+    width: 200px !important;
+    height: 140px !important;
+    flex-direction: column !important;
+    padding: 20px 10px !important;
+    text-align: center !important;
+    justify-content: space-around !important;
+  }
+  .modal-box-inner {
+    flex-direction: column !important;
+    height: 100% !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .banner-outer-fin {
-    height:450px !important;
-    object-fit:scale-down;
+    height: 450px !important;
+    object-fit: scale-down;
   }
   .banner-text-div-b {
     width: 350px !important;
@@ -67,5 +124,21 @@
     width: 330px !important;
     top: 200px !important;
     left: 0px !important;
+  }
+  .box {
+    width: 300px !important;
+    height: 600px !important;
+  }
+  .single-modal-content {
+    width: 180px !important;
+    height: 130px !important;
+    flex-direction: column !important;
+    padding: 20px 10px !important;
+    text-align: center !important;
+    justify-content: space-around !important;
+  }
+  .modal-box-inner {
+    flex-direction: column !important;
+    height: 100% !important;
   }
 }

@@ -1,27 +1,29 @@
-import React, { useState } from "react";
-import banner from ".././../../public/banner.jpeg";
+import React, {useState} from "react";
+import banner from "../../../public/banner.jpeg";
 import "./banner.css";
 import {Link} from "react-router-dom";
 import {color} from "../Color";
 import {useDispatch} from "react-redux";
 import {getUsers} from "../../store/user/userSlice";
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+
 const style = {
-  position: 'absolute' ,
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 950,
-  bgcolor: 'white',
-  border: '2px solid #000',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 1000,
+  height: 250,
+  bgcolor: "white",
+  border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  // paddingTop: 10,
 };
+
 const Banner = () => {
   const dispatch = useDispatch();
   dispatch(getUsers());
@@ -29,6 +31,7 @@ const Banner = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   return (
     <div
       style={{height: "1000px", width: "100%", position: "relative"}}
@@ -48,20 +51,10 @@ const Banner = () => {
         alt=""
         style={{height: "100%", width: "100%", objectFit: "cover"}}
       />
-      {/* <div
-        style={{
-          height: "100%",
-          width: "100%",
-          backgroundColor: "rgb(41,38,38,0.1)",
-          position: "absolute",
-          top:"0px"
-        }}
-      ></div> */}
       <div
         className="banner-text-div-b"
         style={{
           display: "flex",
-          // height: "600px",
           width: "580px",
           alignItems: "center",
           flexDirection: "column",
@@ -70,9 +63,9 @@ const Banner = () => {
           top: "350px",
           left: "100px",
           textAlign: "justify",
-          // backgroundColor: "rgba(128, 128, 128, 0.8)",
           padding: "20px 20px",
           borderRadius: "10px",
+          backgroundColor: "rgba(128, 128, 128, 0.8)",
         }}
       >
         <p
@@ -97,9 +90,7 @@ const Banner = () => {
           Plagiarism Checker, Citation Generator, AI Detector & Knowledge Base.
         </p>
         <div style={{width: "100%", height: "auto"}}>
-          {/* <Link to={"/collections/Ladies"}> */}
           <button
-            className=""
             style={{
               backgroundColor: color.main,
               padding: "10px 15px",
@@ -112,78 +103,93 @@ const Banner = () => {
           >
             Get Started
           </button>
-          {/* </Link> */}
         </div>
       </div>
 
-
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
         closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
-          <div
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "240px",
-              height: "100px",
-              alignItems: "center",
-              // backgroundColor: "red",
-              border:"1px solid black"
-              padding:"10px"
-            }}
-          >
-            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
-            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "240px",
-              height: "100px",
-              alignItems: "center",
-              backgroundColor: "red",
-              padding:"10px"
-            }}
-          >
-            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
-            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "240px",
-              height: "100px",
-              alignItems: "center",
-              backgroundColor: "red",
-              padding:"10px"
-            }}
-          >
-            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
-            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
-          </div>
-        </div>
+          <Box sx={style} className="box">
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <h5 style={{textAlign: "center"}}>
+                  Please choose your service:
+                </h5>
+              </div>
+              <div
+                className="modal-box-inner"
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  alignItems: "center",
+                  padding: "0px 20px",
+                }}
+              >
+                <div
+                  className="single-modal-content"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "250px",
+                    height: "100px",
+                    alignItems: "center",
+                    padding: "10px",
+                    boxShadow: " rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                  }}
+                >
+                  <i className="fa-solid fa-pen-to-square fa-2xl"></i>
+                  <h6 style={{width: "150px"}}>Proofreading and editing</h6>
+                </div>
+                <div
+                  className="single-modal-content"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "250px",
+                    height: "100px",
+                    alignItems: "center",
+                    padding: "10px",
+                    boxShadow: " rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                  }}
+                >
+                  <i className="fa-solid fa-pen-to-square fa-2xl"></i>
+                  <h6 style={{width: "150px"}}>Proofreading and editing</h6>
+                </div>
+                <div
+                  className="single-modal-content"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "250px",
+                    height: "100px",
+                    alignItems: "center",
+                    padding: "10px",
+                    boxShadow: " rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                  }}
+                >
+                  <i className="fa-solid fa-pen-to-square fa-2xl"></i>
+                  <h6 style={{width: "150px"}}>Proofreading and editing</h6>
+                </div>
+              </div>
+            </div>
           </Box>
         </Fade>
       </Modal>
