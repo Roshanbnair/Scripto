@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import banner from ".././../../public/banner.jpeg";
 import "./banner.css";
 import {Link} from "react-router-dom";
 import {color} from "../Color";
 import {useDispatch} from "react-redux";
 import {getUsers} from "../../store/user/userSlice";
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+const style = {
+  position: 'absolute' ,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 950,
+  bgcolor: 'white',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 const Banner = () => {
   const dispatch = useDispatch();
-  const test = () => {
-    dispatch(getUsers());
-  };
+  dispatch(getUsers());
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div
       style={{height: "1000px", width: "100%", position: "relative"}}
@@ -89,18 +108,84 @@ const Banner = () => {
               borderRadius: "5px",
               fontSize: "clamp(0.75rem, 0.4375rem + 1vw, 1rem)",
             }}
+            onClick={handleOpen}
           >
-            <Link
-              style={{textDecoration: "none", color: "white"}}
-              to={"/coming-soon"}
-              onClick={() => test()}
-            >
-              Get Started
-            </Link>
+            Get Started
           </button>
           {/* </Link> */}
         </div>
       </div>
+
+
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={style}>
+          <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "240px",
+              height: "100px",
+              alignItems: "center",
+              backgroundColor: "red",
+              padding:"10px"
+            }}
+          >
+            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "240px",
+              height: "100px",
+              alignItems: "center",
+              backgroundColor: "red",
+              padding:"10px"
+            }}
+          >
+            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "240px",
+              height: "100px",
+              alignItems: "center",
+              backgroundColor: "red",
+              padding:"10px"
+            }}
+          >
+            <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+            <h6 style={{width: "200px"}}>Proofreading and editing</h6>
+          </div>
+        </div>
+          </Box>
+        </Fade>
+      </Modal>
     </div>
   );
 };

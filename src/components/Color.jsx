@@ -1,4 +1,4 @@
 export const color = {
-  main: "#2196f3",
-  secondary:"#90caf9"
+  main: "#00b4d8",
+  secondary: "#ade8f4",
 };
